@@ -4,9 +4,41 @@ $primary-color: rgb(82, 164, 197);
 $primary-color-darker: rgb(54, 125, 153);
 $background-color: rgb(237, 238, 253);
 
-// IMPORTS //
+// IMPORTS AND FONT FIX //
 
 @import 'reset';
+
+@mixin text-crop($line-height: 1.3, $top-adjustment: 0px, $bottom-adjustment: 0px) {
+    // Configured in Step 1
+    $top-crop: 12;
+    $bottom-crop: 3;
+    $crop-font-size: 36;
+    $crop-line-height: 1.2;
+
+    // Apply values to calculate em-based margins that work with any font size
+    $dynamic-top-crop: max(($top-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
+    $dynamic-bottom-crop: max(($bottom-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
+
+    // Mixin output
+    line-height: $line-height;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        height: 0;
+        width: 0;
+    }
+
+    &::before {
+        margin-bottom: calc(-#{$dynamic-top-crop}em + #{$top-adjustment});
+    }
+
+    &::after {
+        margin-top: calc(-#{$dynamic-bottom-crop}em + #{$bottom-adjustment});
+    }
+}
+// Mixin generated at: http://text-crop.eightshapes.com/?typeface-selection=google-font&typeface=Mirza&custom-typeface-name=Helvetica&custom-typeface-url=&custom-typeface-weight=400&custom-typeface-style=normal&weight-and-style=500&size=36&line-height=1.2&top-crop=12&bottom-crop=3
 
 // BASIC STYLES //
 
@@ -21,6 +53,7 @@ h1 {
     text-align: center;
     font-size: 3.5rem;
     margin: .2em 0 .7em 0;
+    @include text-crop;
 
     &:after {
         content: '';
@@ -36,18 +69,21 @@ h1 {
 
 h3 {
     font-size: 2rem;
+    @include text-crop;
 }
 
 h4 {
     margin-bottom: .2em;
     font-size: 1.5rem;
     color: $primary-color;
+    @include text-crop;
 }
 
 p {
     font-size: .9rem;
     letter-spacing: .1em;
     text-align: justify;
+    @include text-crop;
 }
 
 button {
@@ -56,6 +92,7 @@ button {
     background: none;
     cursor: pointer;
     font-family: 'Mirza', cursive;
+    @include text-crop;
 }
 
 // CARD //
@@ -136,7 +173,7 @@ button {
 .btn {
     padding: .4em .7em;
     border: 2px solid $primary-color;
-    border-radius: 5px;
+    border-radius: 7px;
     color: $primary-color;
     background-color: $background-color;
     cursor: pointer;
