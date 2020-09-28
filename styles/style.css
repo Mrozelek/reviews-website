@@ -53,7 +53,7 @@ table {
 body {
   font-size: 62.5%;
   background-color: #edeefd;
-  font-family: cursive;
+  font-family: 'Mirza', cursive;
 }
 
 h1 {
@@ -86,7 +86,7 @@ h4 {
 }
 
 p {
-  font-size: .8rem;
+  font-size: .9rem;
   letter-spacing: .1em;
   text-align: justify;
 }
@@ -96,6 +96,7 @@ button {
   border: none;
   background: none;
   cursor: pointer;
+  font-family: 'Mirza', cursive;
 }
 
 .card {
