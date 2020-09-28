@@ -93,6 +93,7 @@ button {
     cursor: pointer;
     font-family: 'Mirza', cursive;
     @include text-crop;
+    vertical-align: middle;
 }
 
 // CARD //
