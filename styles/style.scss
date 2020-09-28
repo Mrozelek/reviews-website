@@ -1,0 +1,151 @@
+// VARIABLES //
+
+$primary-color: rgb(82, 164, 197);
+$primary-color-darker: rgb(54, 125, 153);
+$background-color: rgb(237, 238, 253);
+
+// IMPORTS //
+
+@import 'reset';
+
+// BASIC STYLES //
+
+body {
+    font-size: 62.5%;
+    background-color: $background-color;
+    font-family: cursive;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    font-size: 3.5rem;
+    margin: .2em 0 .7em 0;
+
+    &:after {
+        content: '';
+        width: 2em;
+        position: absolute;
+        bottom: -10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-bottom: 5px solid $primary-color;
+        border-radius: 2px;
+    }
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    margin-bottom: .2em;
+    font-size: 1.5rem;
+    color: $primary-color;
+}
+
+p {
+    font-size: .8rem;
+    letter-spacing: .1em;
+    text-align: justify;
+}
+
+button {
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+// CARD //
+
+.card {
+    padding: 20px;
+    width: 500px;
+    height: 570px;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2);
+}
+
+// IMAGE //
+
+.personal-image {
+    position: relative;
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: drop-shadow(15px -4px $primary-color);
+    }
+}
+
+.corner-quotations {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    background-color: $primary-color;
+    border-radius: 50%;
+
+    i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 1.3rem;
+    }
+}
+
+// SLIDER NAVIGATION //
+
+.bottom-nav {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.slider-nav {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+
+    button {
+        font-size: 1.7rem;
+        color: $primary-color;
+        padding: 1em 1em;
+    }
+
+    button:hover i {
+        color: $primary-color-darker;
+    }
+}
+
+.btn {
+    padding: .4em .7em;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    color: $primary-color;
+    background-color: $background-color;
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid $primary-color-darker;
+        color: $primary-color-darker;
+    }
+}
+
+.btn-surprise {
+    font-size: .9rem;
+}
