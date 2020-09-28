@@ -3,49 +3,18 @@
 $primary-color: rgb(82, 164, 197);
 $primary-color-darker: rgb(54, 125, 153);
 $background-color: rgb(237, 238, 253);
+$font-family: 'Balsamiq Sans', cursive;
 
 // IMPORTS AND FONT FIX //
 
 @import 'reset';
-
-@mixin text-crop($line-height: 1.3, $top-adjustment: 0px, $bottom-adjustment: 0px) {
-    // Configured in Step 1
-    $top-crop: 15;
-    $bottom-crop: 6;
-    $crop-font-size: 36;
-    $crop-line-height: 1.2;
-
-    // Apply values to calculate em-based margins that work with any font size
-    $dynamic-top-crop: max(($top-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
-    $dynamic-bottom-crop: max(($bottom-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
-
-    // Mixin output
-    line-height: $line-height;
-
-    &::before,
-    &::after {
-        content: '';
-        display: block;
-        height: 0;
-        width: 0;
-    }
-
-    &::before {
-        margin-bottom: calc(-#{$dynamic-top-crop}em + #{$top-adjustment});
-    }
-
-    &::after {
-        margin-top: calc(-#{$dynamic-bottom-crop}em + #{$bottom-adjustment});
-    }
-}
-// Mixin generated at: http://text-crop.eightshapes.com/?
 
 // BASIC STYLES //
 
 body {
     font-size: 62.5%;
     background-color: $background-color;
-    font-family: 'Mirza', cursive;
+    font-family: $font-family;
 }
 
 h1 {
@@ -53,7 +22,6 @@ h1 {
     text-align: center;
     font-size: 3.5rem;
     margin: .2em 0 .7em 0;
-    @include text-crop;
 
     &:after {
         content: '';
@@ -69,21 +37,18 @@ h1 {
 
 h3 {
     font-size: 2rem;
-    @include text-crop;
 }
 
 h4 {
     margin-bottom: .2em;
     font-size: 1.5rem;
     color: $primary-color;
-    @include text-crop;
 }
 
 p {
     font-size: .9rem;
     letter-spacing: .1em;
     text-align: justify;
-    @include text-crop;
 }
 
 button {
@@ -91,9 +56,7 @@ button {
     border: none;
     background: none;
     cursor: pointer;
-    font-family: 'Mirza', cursive;
-    @include text-crop;
-    vertical-align: middle;
+    font-family: $font-family;
 }
 
 // CARD //
