@@ -107,7 +107,7 @@ button {
   padding: 20px;
   width: 500px;
   height: 570px;
-  margin: 0 auto;
+  margin: 1em auto;
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -125,6 +125,22 @@ button {
   background-color: #fff;
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 510px) {
+  .card {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .card {
+    width: 300px;
+    height: 650px;
+  }
 }
 
 .personal-image {

@@ -3,7 +3,8 @@
 $primary-color: rgb(82, 164, 197);
 $primary-color-darker: rgb(54, 125, 153);
 $background-color: rgb(237, 238, 253);
-$font-family: 'Balsamiq Sans', cursive;
+$font-family: 'Balsamiq Sans',
+cursive;
 
 // IMPORTS AND FONT FIX //
 
@@ -65,7 +66,7 @@ button {
     padding: 20px;
     width: 500px;
     height: 570px;
-    margin: 0 auto;
+    margin: 1em auto;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -73,6 +74,23 @@ button {
     justify-content: space-between;
     background-color: #fff;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2);
+}
+
+@media screen and (max-width: 510px) {
+    .card {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .card {
+        width: 300px;
+        height: 650px;
+    }
 }
 
 // IMAGE //
